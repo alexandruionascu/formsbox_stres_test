@@ -61,14 +61,15 @@ const jsonTest = `{
 
 let responses = 0;
 let total = 0;
-const start = Date.now();
+let start = Date.now();
 
 setInterval(() => {
   console.log(`Responses per second: ${responses / ((Date.now() - start) / 1000)}`);
+  start = Date.now();
   responses = 0;
 }, 1000);
 
-for (let i = 0; i < 1000; i++) {
+for (let i = 0; i < 5000; i++) {
   setInterval(async () => {
     try {
 
